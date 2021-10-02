@@ -9,12 +9,13 @@
 #include <iostream>
 #include <fstream>
 
-int main(int argc, const char * argv[]) {
+int main(int argc, const char *argv[])
+{
   //  std::ofstream myFile;
   //  myFile.open("test.txt");
   //is equivilant to:
   std::ofstream myFile("test.txt");
-  
+
   /*
    File Opening Modes
    
@@ -26,18 +27,16 @@ int main(int argc, const char * argv[]) {
    ios::trunc   delete contents of the file if it exists
    
    all of the above can be used with the bitwise OR (|)
-   eg: outfile.open("file.dat", ios::out | ios::trunc)
+   eg: outfile.open("file.dat", std::ios::out | std::ios::trunc)
    
    */
-  
-  
-  
-  if(myFile.is_open())
+
+  if (myFile.is_open())
     myFile << "Some Text.\n";
-  
+
   else
     std::cout << "something went wrong" << std::endl;
-  
+
   myFile.close();
   return 0;
 }
